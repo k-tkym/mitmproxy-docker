@@ -3,3 +3,6 @@ mitmproxy_data/
 
 # macOS system files
 .DS_Store
+
+# Local configuration files
+.env
