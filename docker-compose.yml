@@ -7,9 +7,11 @@ services:
       - "51820:51820/udp"
     volumes:
       - "./mitmproxy_data:/home/mitmproxy/.mitmproxy"
+    cap_add:
+      - NET_ADMIN 
     command: >
       mitmweb
-      --mode transparent
-      --web-host [IP_ADDRESS]
-      --set web_password=password
+      --mode wireguard
+      --web-host 0.0.0.0
+      --set web_password=${WEB_PASSWORD:-password}
     restart: unless-stopped
