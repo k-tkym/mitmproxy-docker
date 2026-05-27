@@ -1,0 +1,15 @@
+services:
+  mitmproxy:
+    image: "mitmproxy/mitmproxy:latest"
+    container_name: mitmproxy_wireguard
+    ports:
+      - "8081:8081"
+      - "51820:51820/udp"
+    volumes:
+      - "./mitmproxy_data:/home/mitmproxy/.mitmproxy"
+    command: >
+      mitmweb
+      --mode transparent
+      --web-host [IP_ADDRESS]
+      --set web_password=password
+    restart: unless-stopped

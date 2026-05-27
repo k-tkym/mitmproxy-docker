@@ -1,0 +1,5 @@
+# mitmproxy auto-generated data (certificates, keys, wireguard configs, etc.)
+mitmproxy_data/
+
+# macOS system files
+.DS_Store
